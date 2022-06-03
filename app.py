@@ -82,4 +82,4 @@ def update(id):
         return render_template('update.html')
 
 if __name__ == "__main__":
-    app.run(host="10.0.0.3", port=5000, debug=True)
+    app.run(host="127.0.0.1", debug=True)
