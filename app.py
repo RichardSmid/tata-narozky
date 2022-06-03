@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, redirect
+from Flask import Flask, redirect, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from bs4 import BeautifulSoup
