@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<title>Sdílení</title>
+
+<script>
+function changePos(){
+    let div = document.getElementsByClassName('recomend-block')[0];if (div.style.top == '50%') {div.style.top = '-100vh';} else {div.style.top = '50%';}
+}
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    {% for video in videoGet %}
+    <a databaseid="{{ video.id }}" href="https://www.youtube.com/watch?v={{ video.content }}">
+        <div class="block">
+            <div class="thumbnail">
+                <img src="https://i.ytimg.com/vi/{{ video.content }}/hq720.jpg" alt="">
+            </div>
+            <div class="name">
+                {{ video.name }}
+            </div>
+            <div class="author">
+                {{ video.author }}
+            </div>
+        </div> 
+    </a>
+    {% endfor %}
+
+<div class="button-center">
+    <button class="button" onclick="changePos()">DOPORUČIT</button>
+</div>
+</div>
+
+<div class="recomend-block">
+    <a onclick="changePos()">✕</a>
+    <form action="/update/{{ videoGet[1].id }}" method="POST">
+        <input type="text" name="url" id="url" class="text-input">
+        <input type="submit" value="DOPORUČIT" class="button" onclick="changePos()">
+    </form>
+</div>
+
+<div class="hidden">
+    <form action="/update/{{ videoGet[0].id }}" method="POST">
+        <input type="text" name="url" id="url" class="text-input">
+        <input type="submit" value="DOPORUČIT" class="button"">
+    </form>
+</div>
+
+<div class="thin">SORRY, BUT YOUR DEVICE IS TOO THIN</div>
+{% endblock %}

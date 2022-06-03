@@ -1,0 +1,150 @@
+body{
+    background: rgb(55, 72, 105);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    color: black ;
+    /* padding: 50vh 30vw; */
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.content{
+    text-align: center;
+    /* filter: brightness(70%); */
+}
+
+.block{
+    display: inline-block;
+    background: #fff;
+    margin: 2vh;
+    padding: .8pc .8pc .4pc .8pc;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    text-align: left;
+    width: min(calc(1.6pc + 40vh), auto);
+}
+
+.thumbnail{
+    width: auto;
+    height: 20vh;
+    height: auto;
+    display: block;
+    user-select: none;
+}
+
+.name{
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    width: 100%;
+}
+
+img{
+    width: 40vh;
+    height: auto;
+}
+
+.author{
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+    font-weight: 400;
+    color: #777;
+}
+
+.button-center{
+    margin: 2vh 0 0 0;
+}
+
+button, .button{
+    background: #EBBD57;
+    border: none;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    padding: .6em 4em;
+    font-size: large;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    display: inline-block;
+    user-select: none;
+    /* display: block;  */
+}
+.button:hover{background: #ebb057;}
+.button:active{background: #E0A853;}
+
+.recomend-block{
+    background: #fff;
+    color: #000;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    text-align: center;
+    display: block;
+    transition: all 0.8s;
+    box-shadow: 3px 3px 6px rgb(182, 182, 182);
+    
+    top: -70vh;
+    left: 50%;
+    /* height: 55vh;
+    width: 65vw; */
+}
+
+.thin{display: none;color: #fff; font-family: 'Roboto', sans-serif;}
+
+.recomend-block a{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.text-input{
+    padding: .1em;
+    display: inline;
+    width: 100%;
+    font-size: larger;
+    margin: .5em 0;
+    outline: none;
+}
+
+.hidden{
+    position: absolute;
+    top: 0;
+    text-align: center;
+    display: none;
+}
+
+.hidden .button{
+    background-color: rgb(39, 161, 28);
+}
+
+@media only screen and (max-width: 450px) {
+    img{
+        width: 35vh;
+    }
+
+    .block{
+        margin: 1vh;
+    }
+
+    .recomend-block{
+        width: 75vw;
+    }
+}
+
+@media only screen and (max-width: 260px) {
+    .content{
+        display: none;
+    }
+    .thin{
+        display: block;
+    }
+}
